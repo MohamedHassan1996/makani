@@ -22,7 +22,7 @@ class UserResouce extends JsonResource
             'phone' => $this->phone?$this->phone:"",
             'address' => $this->address?$this->address:"",
             'status' => $this->status,
-            'avatar' => $this->avatar?Storage::disk('public')->url($this->avatar):"",
+            // 'avatar' => $this->avatar?Storage::disk('public')->url($this->avatar):"",
         ];
     }
 }

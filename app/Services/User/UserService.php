@@ -34,9 +34,9 @@ class UserService
    }
    public function create(array $data)
    {
-     if(isset($data['avatar']) && $data['avatar'] instanceof UploadedFile){
-        $avatarPath= $this->uploadService->uploadFile($data['avatar'],'avatars');
-     }
+    //  if(isset($data['avatar']) && $data['avatar'] instanceof UploadedFile){
+    //     $avatarPath= $this->uploadService->uploadFile($data['avatar'],'avatars');
+    //  }
      $user =User::create([
         'name' => $data['name'],
         'username' => $data['username'],
@@ -45,7 +45,7 @@ class UserService
         'address'=>$data['address'],
         'password' =>Hash::make($data['password']),
         'status' =>UserStatus::from($data['status'])->value,
-        'avatar' => $avatarPath
+        // 'avatar' => $avatarPath
      ]);
      $role = Role::find($data['roleId']);
      $user->assignRole($role->id);
@@ -58,11 +58,11 @@ class UserService
    }
    public function update(array $data)
    {
-    $avatarPath = null;
+    // $avatarPath = null;
 
-    if(isset($data['avatar']) && $data['avatar'] instanceof UploadedFile){
-        $avatarPath =  $this->uploadService->uploadFile($data['avatar'],'avatars');
-    }
+    // if(isset($data['avatar']) && $data['avatar'] instanceof UploadedFile){
+    //     $avatarPath =  $this->uploadService->uploadFile($data['avatar'],'avatars');
+    // }
       $user =User::where('id',$data['userId'])->first();
       $user->name =$data['name'];
       $user->username = $data['username'];
@@ -72,10 +72,10 @@ class UserService
       if($data['password']){
           $user->password =Hash::make($data['password']);
       }
-      if($avatarPath){
-        Storage::disk('public')->delete($user->avatar);
-        $user->avatar = $avatarPath;
-    }
+    //   if($avatarPath){
+    //     Storage::disk('public')->delete($user->avatar);
+    //     $user->avatar = $avatarPath;
+    // }
       $user->status = UserStatus::from($data['status'])->value;
       $user->save();
       $role = Role::find($data['roleId']);

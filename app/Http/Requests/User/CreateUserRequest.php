@@ -31,7 +31,7 @@ class CreateUserRequest extends FormRequest
             "username"=>'required|string',
             "phone"=>'nullable|string',
             "address"=>'nullable|string',
-            "avatar"=>'nullable|image|mimes:png,jpg,webg,jpeg,gif',
+            // "avatar"=>'nullable|image|mimes:png,jpg,webg,jpeg,gif',
             "email"=>'nullable|email',
             "status"=>['required',new Enum(UserStatus::class)],
             'password'=>['required',Password::min(8)->letters()->numbers()],
