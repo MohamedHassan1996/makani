@@ -3,9 +3,10 @@
 namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-
 use function PHPUnit\Framework\isEmpty;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
 {
@@ -26,11 +27,17 @@ class ProductResource extends JsonResource
                 'metaData' . ucfirst($translation->locale) => $translation->meta_data ?? "",
             ];
         });
-
+        $urls = [];
+        if ($this->images != null) {
+            foreach ($this->images as $image) {
+                $urls[] = Storage::disk('public')->url($image->path);
+            }
+        }
         return [
             'productId' => $this->id,
             'isActive' => $this->is_active,
-
+            'image' => $this->images?$urls:"",
+            // 'image' => $this->images->first() != null? Storage::disk('public')->url($this->images->first()->path):"",
             // Translated fields
             'nameEn' => $translations['nameEn'] ?? "",
             'nameAr' => $translations['nameAr'] ?? "",

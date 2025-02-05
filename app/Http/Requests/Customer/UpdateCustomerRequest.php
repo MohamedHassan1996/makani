@@ -26,9 +26,9 @@ class UpdateCustomerRequest extends FormRequest
         return [
             'customerId' => 'required',
             'name' =>['required'],
-            'email' =>['required', 'email', "unique:customers,email,{$this->customerId}"],
-            'phone' =>['required'],
-            'address' => 'required',
+            'email' =>['nullable', 'email', "unique:customers,email,{$this->customerId}"],
+            'phone' =>['nullable'],
+            'address' => 'nullable',
             'description' => 'nullable',
         ];
     }

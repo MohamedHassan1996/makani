@@ -16,8 +16,13 @@ class FeedbackController extends Controller
     protected $feedbackServices;
     public function __construct(FeedbackServices $feedbackServices)
     {
-        //   $this->middleware('auth:api');
+          $this->middleware('auth:api');
           $this->feedbackServices = $feedbackServices;
+          $this->middleware('permission:all_feedbacks',['only'=>['index']]);
+          $this->middleware('permission:create_feedback',['only'=>['create']]);
+          $this->middleware('permission:edit_feedback',['only'=>'edit']);
+          $this->middleware('permission:update_feedback',['only'=>'update']);
+          $this->middleware('permission:delete_feedback',['only'=>'delete']);
     }
     public function index()
     {

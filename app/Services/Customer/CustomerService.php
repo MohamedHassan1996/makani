@@ -29,9 +29,9 @@ class CustomerService{
 
         $customer = Customer::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
+            'email' => $data['email'] ?? null,
+            'phone' => $data['phone'] ?? null,
+            'address' => $data['address'] ?? null,
             'description' => $data['description'],
         ]);
 
@@ -49,9 +49,9 @@ class CustomerService{
 
         $customer->update([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
+            'email' => $data['email']??null,
+            'phone' => $data['phone']??null,
+            'address' => $data['address']??null,
             'description' => $data['description'],
         ]);
 

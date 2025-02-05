@@ -19,8 +19,13 @@ class ProductCategoryController extends Controller
 
     public function __construct(ProductCategoryService $productCategoryService)
     {
-        // $this->middleware('auth:api');
+        $this->middleware('auth:api');
         $this->productCategoryService = $productCategoryService;
+        $this->middleware('permission:all_product_categorys',['only'=>['index']]);
+        $this->middleware('permission:create_product_category',['only'=>['create']]);
+        $this->middleware('permission:edit_product_category',['only'=>'edit']);
+        $this->middleware('permission:update_product_category',['only'=>'update']);
+        $this->middleware('permission:delete_product_category',['only'=>'delete']);
     }
 
     /**

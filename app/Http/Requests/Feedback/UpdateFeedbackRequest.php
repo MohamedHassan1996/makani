@@ -25,9 +25,9 @@ class UpdateFeedbackRequest extends FormRequest
     {
         return [
             "feedbackId"=>'required|exists:feedbacks,id',
-            "Name"=>'string|required',
-            "Feedback"=>'string|required',
-            "Rating"=>'integer|between:1,5'
+            "name"=>'string|required',
+            "feedback"=>'string|required',
+            "rating"=>'integer|between:1,5'
         ];
     }
     public function failedValidation(Validator $validator )

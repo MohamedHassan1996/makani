@@ -4,10 +4,19 @@ namespace App\Services\Product;
 use App\Models\Product\Product;
 use App\Enums\Product\ProductStatus;
 use Spatie\QueryBuilder\QueryBuilder;
+use App\Services\Upload\UploadService;
 use Spatie\QueryBuilder\AllowedFilter;
+use App\Services\Product\ProductImageService;
 use App\Filters\Product\ProductSearchTranslatableFilter;
 
 class ProductService{
+    private $uploadService;
+    private $productImageService;
+    public function __construct(UploadService $uploadService ,ProductImageService $productImageService)
+    {
+        $this->uploadService = $uploadService;
+        $this->productImageService = $productImageService;
+    }
     public function all()
     {
         $products = QueryBuilder::for(Product::class)

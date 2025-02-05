@@ -20,6 +20,11 @@ class CustomerController extends Controller
     public function __construct(CustomerService $customerService)
     {
         $this->middleware('auth:api');
+        $this->middleware('permission:all_customer',['only'=>['index']]);
+        $this->middleware('permission:create_customer',['only'=>['create']]);
+        $this->middleware('permission:edit_customer',['only'=>'edit']);
+        $this->middleware('permission:update_customer',['only'=>'update']);
+        $this->middleware('permission:delete_customer',['only'=>'delete']);
        $this->customerService =$customerService;
     }
     public function index(Request $request)

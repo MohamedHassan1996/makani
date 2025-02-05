@@ -21,16 +21,20 @@ class FeedbackServices
     }
     public function create(array $data)
     {
-       return  Feedback::create($data);
+       return  Feedback::create([
+        "name"=>$data['name'],
+        "feedback"=>$data['feedback'],
+        "rating"=>$data['rating']
+       ]);
     }
     public function update(array $data)
     {
 
         $feedback=Feedback::where('id',$data['feedbackId'])->first();
         $feedback->update([
-            "name"=>$data['Name'],
-            "feedback"=>$data['Feedback'],
-            "rating"=>$data['Rating']
+            "name"=>$data['name'],
+            "feedback"=>$data['feedback'],
+            "rating"=>$data['rating']
         ]);
         return $feedback;
     }

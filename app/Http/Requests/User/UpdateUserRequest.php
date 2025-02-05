@@ -31,9 +31,9 @@ class UpdateUserRequest extends FormRequest
             "name"=>'required|string',
             'phone' => 'nullable',
             'address' => 'nullable|string',
-            "email"=>'required|email',
+            "email"=>'nullable|email',
             "status"=>['required'],
-            'password'=>['nullable','confirmed',Password::min(8)->letters()->numbers()],
+            'password'=>['nullable',Password::min(8)->letters()->numbers()],
             "roleId"=>'sometimes|exists:roles,id'
         ];
     }
