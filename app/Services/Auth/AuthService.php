@@ -7,11 +7,18 @@ use App\Enums\User\UserStatus;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Services\UserRolePremission\UserPermissionService;
 use App\Http\Resources\Role\RoleResource;
 use App\Http\Resources\User\UserallResource;
 
 class AuthService
 {
+    protected $userPermissionService;
+
+    public function __construct(UserPermissionService $userPermissionService,)
+    {
+        $this->userPermissionService = $userPermissionService;
+    }
  public function register(array $data)
     {
             try {
@@ -52,6 +59,7 @@ class AuthService
             "token"=>$usertoken,
             "profile"=>new UserResouce($user),
             "roles"=>new RoleResource($role),
+            'permissions' => $this->userPermissionService->getUserPermissions($user),
         ],200);
         } catch (\Throwable $th) {
             return response()->json([
