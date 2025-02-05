@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API\Dashboard\Product;
 
+use App\Models\Product\ProductImage;
 use Illuminate\Http\Request;
 use App\Utils\PaginateCollection;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +26,12 @@ class ProductController extends Controller
         $this->productService =$productService;
         $this->uploadService = $uploadService;
         $this->productImageService = $productImageService;
-        // $this->middleware('auth:api');
+        $this->middleware('auth:api');
+        $this->middleware('permission:all_products',['only'=>['index']]);
+        $this->middleware('permission:create_product',['only'=>['create']]);
+        $this->middleware('permission:edit_product',['only'=>'edit']);
+        $this->middleware('permission:update_product',['only'=>'update']);
+        $this->middleware('permission:delete_product',['only'=>'delete']);
     }
 
     public function index(Request $request)
@@ -75,7 +81,19 @@ class ProductController extends Controller
     {
         try {
             DB::beginTransaction();
-            $this->productService->update($updateProductRequest->validated());
+        $product = $this->productService->update($updateProductRequest->validated());
+            if (isset($updateProductRequest['images'])) {
+                foreach ($updateProductRequest['images'] as $key => $image) {
+                    if (is_string($image['path'])) {
+                        continue;
+                    }
+                    $path = $this->uploadService->uploadFile($image['path'], "products/$product->id");
+                    $productImage = new ProductImage();
+                    $productImage->path = $path;
+                    $productImage->product_id = $updateProductRequest['productId'];
+                    $productImage->save();
+                }
+            }
             DB::commit();
             return response()->json([
                 'message' => __('messages.success.updated')

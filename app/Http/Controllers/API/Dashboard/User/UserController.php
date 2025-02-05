@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserResouce;
 use App\Http\Requests\User\CreateUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
-use App\Http\Resources\user\AllUserCollection;
+use App\Http\Resources\User\AllUserCollection;
 use App\Http\Resources\User\AllUserDataResource;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 

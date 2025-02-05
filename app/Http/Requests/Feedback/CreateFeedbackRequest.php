@@ -24,9 +24,9 @@ class CreateFeedbackRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "Name"=>'string|required',
-            "Feedback"=>'string|required',
-            "Rating"=>'integer|between:1,5'
+            "name"=>'string|required',
+            "feedback"=>'string|required',
+            "rating"=>'integer|between:1,5'
         ];
     }
     public function failedValidation(Validator $validator )

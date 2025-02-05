@@ -21,6 +21,31 @@ class RolesAndPermissionSeeder extends Seeder
             'update_user',
             'delete_user',
             'change_user_status',
+
+            'all_customer',
+            'create_customer',
+            'edit_customer',
+            'update_customer',
+            'delete_customer',
+
+            'all_products',
+            'create_product',
+            'edit_product',
+            'update_product',
+            'delete_product',
+
+            'all_product_categorys',
+            'create_product_category',
+            'edit_product_category',
+            'update_product_category',
+            'delete_product_category',
+
+            'all_feedbacks',
+            'create_feedback',
+            'edit_feedback',
+            'update_feedback',
+            'delete_feedback',
+
         ];
         foreach ($permissions as  $permission) {
             Permission::updateOrCreate([

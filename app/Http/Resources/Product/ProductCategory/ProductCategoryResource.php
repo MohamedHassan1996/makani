@@ -17,6 +17,7 @@ class ProductCategoryResource extends JsonResource
         // Extract translations for different locales
         $translations = $this->translations->mapWithKeys(function ($translation) {
             return [
+                'description' . ucfirst($translation->locale) => $translation->description ?? "",
                 'name' . ucfirst($translation->locale) => $translation->name ?? "",
             ];
         });
@@ -28,6 +29,9 @@ class ProductCategoryResource extends JsonResource
             // Translated fields
             'nameEn' => $translations['nameEn'] ?? "",
             'nameAr' => $translations['nameAr'] ?? "",
+            
+            'descriptionEn' => $translations['descriptionEn'] ?? "",
+            'descriptionAr' => $translations['descriptionAr'] ?? "",
         ];
     }
 
