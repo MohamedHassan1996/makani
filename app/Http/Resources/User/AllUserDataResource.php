@@ -28,7 +28,7 @@ class AllUserDataResource extends JsonResource
             'phone' => $this->phone??"",
             'address' => $this->address??"",
             'status' => $this->status,
-            'avatar' => $this->avatar?Storage::disk('public')->url($this->avatar):"",
+            // 'avatar' => $this->avatar?Storage::disk('public')->url($this->avatar):"",
             'roleId' => RoleResource::collection($this->whenLoaded('roles'))[0]->id,
         ];
     }
