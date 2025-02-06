@@ -11,7 +11,6 @@ use App\Http\Controllers\API\Dashboard\Career\CareerController;
 use App\Http\Controllers\API\Dashboard\Select\SelectController;
 use App\Http\Controllers\API\Dashboard\Product\ProductController;
 use App\Http\Controllers\API\Dashboard\Career\CandidateController;
-use App\Http\Controllers\API\Dashboard\ContactUs\WebsiteContactUsController;
 use App\Http\Controllers\API\Dashboard\Blog\BlogCategoryController;
 use App\Http\Controllers\API\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\API\Dashboard\Feedback\FeedbackController;
@@ -20,8 +19,10 @@ use App\Http\Controllers\API\Dashboard\FrontPage\FrontPagecontroller;
 use App\Http\Controllers\API\Dashboard\Product\ProductImageController;
 use App\Http\Controllers\API\Dashboard\Newsletter\NewsletterController;
 use App\Http\Controllers\API\Dashboard\Newsletter\SubscriberController;
+use App\Http\Controllers\Api\Dashboard\MainSetting\MainSettingController;
 use App\Http\Controllers\API\Dashboard\Product\ProductCategoryController;
 use App\Http\Controllers\API\Dashboard\ContactUs\ContactUsMessageController;
+use App\Http\Controllers\API\Dashboard\ContactUs\WebsiteContactUsController;
 use App\Http\Controllers\API\Dashboard\FrontPage\FrontPageSectionController;
 
 /*
@@ -164,6 +165,12 @@ Route::prefix('v1/{lang}/admin/feedbacks')->where(['lang' => 'en|ar'])->group(fu
     Route::put('update', [FeedbackController::class, 'update']);
     Route::delete('delete', [FeedbackController::class, 'delete']);
 });
+Route::prefix('v1/{lang}/admin/main-settings')->where(['lang' => 'en|ar'])->group(function(){
+    Route::post('create', [MainSettingController::class, 'create']);
+    Route::get('edit', [MainSettingController::class, 'edit']);
+    Route::put('update', [MainSettingController::class, 'update']);
+});
+
 Route::prefix('v1/{lang}/admin/selects')->where(['lang' => 'en|ar'])->group(function(){
     Route::get('', [SelectController::class, 'getSelects']);
 });
