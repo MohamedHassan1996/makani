@@ -17,8 +17,6 @@ class WebsiteContactUsController extends Controller
 
         try {
             DB::beginTransaction();
-
-
             $contactUs  = ContactUs::create([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -33,7 +31,7 @@ class WebsiteContactUsController extends Controller
                 'is_read' => null
 
             ]);
-            Mail::to('mohamedhassan00096@gmail.com')->send(new ContactUsToAdmin($contactUsMessages,$contactUs));
+            Mail::to(env('MAIL_USERNAME'))->send(new ContactUsToAdmin($contactUsMessages,$contactUs));
             DB::commit();
 
             return response()->json([
