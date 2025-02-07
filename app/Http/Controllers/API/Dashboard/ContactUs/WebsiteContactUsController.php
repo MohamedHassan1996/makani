@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API\Dashboard\ContactUs;
 
 use Illuminate\Http\Request;
+use App\Mail\ContactUsToAdmin;
 use Illuminate\Support\Facades\DB;
 use App\Models\ContactUs\ContactUs;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Models\ContactUs\ContactUsMessage;
 
 class WebsiteContactUsController extends Controller
@@ -31,7 +33,7 @@ class WebsiteContactUsController extends Controller
                 'is_read' => null
 
             ]);
-
+            Mail::to('mohamedhassan00096@gmail.com')->send(new ContactUsToAdmin($contactUsMessages,$contactUs));
             DB::commit();
 
             return response()->json([
