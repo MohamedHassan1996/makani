@@ -42,6 +42,9 @@ class ProductCategoryService{
         $path = null;
 
         if (isset($data['image'])) {
+            if(is_string($data['image'])){
+                $path = null;
+            }
             $path = $this->uploadService->uploadFile($data['image'], 'productCategories');
         }
 
@@ -78,8 +81,10 @@ class ProductCategoryService{
 
         $path = null;
 
-
         if (isset($data['image'])) {
+            if(is_string($data['image'])){
+                $path = null;
+            }
             $path = $this->uploadService->uploadFile($data['image'], 'productCategories');
         }
 
