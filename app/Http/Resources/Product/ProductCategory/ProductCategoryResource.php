@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Product\ProductCategory;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductCategoryResource extends JsonResource
@@ -24,12 +25,11 @@ class ProductCategoryResource extends JsonResource
 
         return [
             'productCategoryId' => $this->id,
+            'image'=>$this->image? Storage::disk('public')->url($this->image):"",
             'isActive' => $this->is_active,
-
             // Translated fields
             'nameEn' => $translations['nameEn'] ?? "",
             'nameAr' => $translations['nameAr'] ?? "",
-            
             'descriptionEn' => $translations['descriptionEn'] ?? "",
             'descriptionAr' => $translations['descriptionAr'] ?? "",
         ];

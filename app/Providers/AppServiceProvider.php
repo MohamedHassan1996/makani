@@ -21,8 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $frontPage = FrontPage::with('translations')->where('is_active', FrontPageStatus::ACTIVE->value)->get();
+        $frontPage = FrontPage::with('translations')->where('is_active', FrontPageStatus::ACTIVE->value)->get();
 
-        // view()->share('navbarLinks', $frontPage);
+        view()->share('navbarLinks', $frontPage);
     }
 }

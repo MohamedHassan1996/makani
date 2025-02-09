@@ -31,7 +31,7 @@ class ContactMessageService{
         ]);
 
         $contactUs = ContactUs::find($data['contactUsId']);
-        //Mail::to($contactUs->email)->send(new ContactUsMessageNotification($contactUsMessage, $contactUs));
+        Mail::to($contactUs->email)->send(new ContactUsMessageNotification($contactUsMessage, $contactUs));
 
         return $contactUsMessage;
     }
