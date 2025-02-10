@@ -15,7 +15,7 @@ use App\Http\Controllers\API\Dashboard\Blog\BlogCategoryController;
 use App\Http\Controllers\API\Dashboard\Customer\CustomerController;
 use App\Http\Controllers\API\Dashboard\Feedback\FeedbackController;
 use App\Http\Controllers\API\Dashboard\ContactUs\ContactUsController;
-use App\Http\Controllers\API\Dashboard\FrontPage\FrontPagecontroller;
+use App\Http\Controllers\API\Dashboard\FrontPage\FrontPageController;
 use App\Http\Controllers\API\Dashboard\Product\ProductImageController;
 use App\Http\Controllers\API\Dashboard\Newsletter\NewsletterController;
 use App\Http\Controllers\API\Dashboard\Newsletter\SubscriberController;
@@ -145,11 +145,11 @@ Route::prefix('v1/{lang}/admin/contact-us-messages')->where(['lang' => 'en|ar'])
     Route::put('read-message', [ContactUsMessageController::class, 'read']);
 });
 Route::prefix('v1/{lang}/admin/front-pages')->where(['lang' => 'en|ar'])->group(function(){
-    Route::get('', [FrontPagecontroller::class, 'index']);
-    Route::post('create', [FrontPagecontroller::class, 'create']);
-    Route::get('edit', [FrontPagecontroller::class, 'edit']);
-    Route::put('update', [FrontPagecontroller::class, 'update']);
-    Route::delete('delete', [FrontPagecontroller::class, 'delete']);
+    Route::get('', [FrontPageController::class, 'index']);
+    Route::post('create', [FrontPageController::class, 'create']);
+    Route::get('edit', [FrontPageController::class, 'edit']);
+    Route::put('update', [FrontPageController::class, 'update']);
+    Route::delete('delete', [FrontPageController::class, 'delete']);
 });
 Route::prefix('v1/{lang}/admin/front-page-sections')->where(['lang' => 'en|ar'])->group(function(){
     Route::get('', [FrontPageSectionController::class, 'index']);
