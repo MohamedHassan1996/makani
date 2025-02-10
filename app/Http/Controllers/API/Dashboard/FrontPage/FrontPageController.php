@@ -13,7 +13,7 @@ use App\Http\Requests\FrontPage\UpdateFrontPageRequest;
 use App\Http\Resources\FrontPage\AllFrontPageCollection;
 
 
-class FrontPagecontroller extends Controller
+class FrontPageController extends Controller
 {
     protected $frontPageService;
 
