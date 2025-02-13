@@ -84,7 +84,7 @@
     <div id="loading" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
         <p>Loading...</p>
     </div>
-    @include('Contact.Sections.contactMap')
+    @include('Contact.Sections.ContactMap')
 </div>
   </main>
   <script>
