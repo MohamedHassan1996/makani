@@ -64,7 +64,8 @@ class MainSettingController extends Controller
         return response()->json([
             'data' => [
                 'mainSettingId' => $mainSettings->id,
-                'content' => json_encode($mainSettings->content),
+                //'content' => json_encode($mainSettings->content),
+                'content' => $mainSettings->content,
                 'logo' => $mainSettings->logo?Storage::disk('public')->url($mainSettings->logo):"",
                 'favicon' => $mainSettings->favicon?Storage::disk('public')->url($mainSettings->favicon):"",
             ]
