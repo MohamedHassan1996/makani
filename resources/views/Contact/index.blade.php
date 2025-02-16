@@ -77,9 +77,9 @@
         </div>
     </form>
         <!-- Success and Error Popups -->
-    <div id="popup" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background: white; padding: 20px; border: 1px solid #333; border-radius: 5px; text-align: center;">
+    <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background: blue; color: white; padding: 20px; border: 1px solid #333; border-radius: 10px; text-align: center;">
         <p id="popupMessage"></p>
-        <button onclick="document.getElementById('popup').style.display = 'none'">Close</button>
+        <button onclick="document.getElementById('popup').style.display = 'none'" style="margin-top: 20px">Close</button>
     </div>
     <div id="loading" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
         <p>Loading...</p>
@@ -120,7 +120,6 @@
 
        try {
          loading.style.display = 'block';
-
          const response = await fetch('http://127.0.0.1:8000/api/v1/contact-us/create', {
            method: 'POST',
            headers: {

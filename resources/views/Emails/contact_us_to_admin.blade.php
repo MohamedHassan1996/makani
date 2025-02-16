@@ -45,7 +45,7 @@
     <div class="content">
         <p><strong>Subject:</strong> {{ $contactUs->subject }}</p>
         <p><strong>Message:</strong>{{ $contactUsMessage->message }}</p>
-        @dd('sdsd')
+
     </div>
 </div>
 

@@ -148,4 +148,15 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    document.getElementById("whatsappButton").addEventListener("click", function() {
+        var phoneNumber = "201007481557"; // رقم الواتساب بدون "+"
+        var currentPage = window.location.href;
+        var message = encodeURIComponent("مرحبًا، أريد الاستفسار عن هذه الصفحة" + "\n" + "\n" + "currentPage");
+
+        var whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + message;
+        window.open(whatsappLink, "_blank");
+    });
+
+
+
 });
