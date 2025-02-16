@@ -10,7 +10,7 @@
         </div>
     @endif
 <div class="contact-us-page flex justify-between flex-row gap-2 mt-20">
-    <form id="contactForm" class="flex  justify-start items-stretch flex-col gap-[31px] w-full md:w-[553px] box-border">
+    <form id="contactForm" class="form flex justify-start items-stretch flex-col gap-[31px] w-full md:w-[553px] box-border">
         <div class="flex justify-start items-center flex-col sm:flex-row  gap-3">
             <div class="w-full flex justify-center items-stretch flex-col grow shrink basis-0">
                 {{ app()->getLocale() == 'en' ? 'name' : 'الاسم' }}
@@ -120,7 +120,7 @@
 
        try {
          loading.style.display = 'block';
-         const response = await fetch('http://127.0.0.1:8000/api/v1/contact-us/create', {
+         const response = await fetch('https://mkani-uae.com/api/v1/contact-us/create', {
            method: 'POST',
            headers: {
              'Content-Type': 'application/json'

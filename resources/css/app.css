@@ -90,7 +90,7 @@ html {
       flex-direction: column !important;
       width: 100%;
 
-      form {
+      .form {
         width: 100%;
       }
     }
