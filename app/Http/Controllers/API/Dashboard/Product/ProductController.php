@@ -43,13 +43,13 @@ class ProductController extends Controller
             );
 
     }
-    public function create(Request $request)
+    public function create(CreateProductRequest $createProductRequest)
     {
         // CreateProductRequest $createProductRequest
         try {
             DB::beginTransaction();
-            // $data=$createProductRequest->validated();
-            $data=$request->all();
+            $data=$createProductRequest->validated();
+            // $data=$request->all();
             $product =  $this->productService->create($data);
             if (isset($data['images'])) {
                 foreach ($data['images'] as $key => $image) {

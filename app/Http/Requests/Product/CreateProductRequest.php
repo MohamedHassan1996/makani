@@ -28,8 +28,8 @@ class CreateProductRequest extends FormRequest
         return [
             'nameEn' => ['required', 'unique:product_translations,name,NULL,id,locale,en'],
             'nameAr' => ['required', 'unique:product_translations,name,NULL,id,locale,ar'],
-            'slugEn' => ['required','unique:products,column,except,id'],
-            'slugAr' => ['required'],
+            'slugEn' => ['required','unique:product_translations,slug,NULL,id,locale,en'],
+            'slugAr' => ['required','unique:product_translations,slug,NULL,id,locale,ar'],
             'descriptionEn' => ['required'],
             'descriptionAr' => ['required'],
             'contentEn' => ['required'],
@@ -37,7 +37,7 @@ class CreateProductRequest extends FormRequest
             'metaDataEn' => ['required'],
             'metaDataAr' => ['required'],
             'isActive' => ['required', new Enum(ProductStatus::class)],
-            'images' => ['nullable'],
+            'images' => ['required','max:2048'],
         ];
     }
     public function failedValidation(Validator $validator)

@@ -77,11 +77,11 @@
               </p>
             @endif
 
-            <div class="links flex flex-col gap-[24px] md:flex-row">
+            {{-- <div class="links flex flex-col gap-[24px] md:flex-row">
               <a href="" class="text-white">سياسة الخصوصية</a>
               <a href="" class="text-white">شروط الخدمة</a>
               <a href="" class="text-white">إعدادات الكوكيز</a>
-            </div>
+            </div> --}}
           </div>
         </div>
       </section>
