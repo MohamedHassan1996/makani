@@ -34,7 +34,7 @@
                 <a href="https://www.linkedin.com" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="" /></a>
                 <a href="https://twitter.com" target="_blank"><img src="{{ url('storage/assets/X.png') }}" width="25" height="25" alt="" /></a> --}}
                 {{-- <a href="https://www.youtube.com" target="_blank"><img src="url('storage/assets/Youtube.svg') }}" width="25" height="25" alt=""/></a> --}}
-                <a href="{{ $mainSettings->content['socialMedia']['facebook'] }}" target="_blank"><img src="{{ url('storage/assets/Facebook.png') }}" width="25" height="25" alt="Facebook" /></a>
+                <a href="{{ $mainSettings->content['socialMedia']['facebook'] }}" target="_blank"><img src="{{ url('storage/assets/Facebook .png') }}" width="25" height="25" alt="Facebook" /></a>
                 <a href="{{ $mainSettings->content['socialMedia']['instagram'] }}" target="_blank"><img src="{{ url('storage/assets/Instagram.png') }}" width="25" height="25" alt="Instagram" /></a>
                 <a href="{{ $mainSettings->content['socialMedia']['linkedin'] }}" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="LinkedIn" /></a>
               </div>
