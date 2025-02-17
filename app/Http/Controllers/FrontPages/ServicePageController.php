@@ -21,5 +21,13 @@ class ServicePageController extends Controller
 
         return view('Services.index', compact( 'productCategories'));
     }
+    public function show(Request $request,$singleSlug,$lang="en")
+    {
+        $locale = app()->getLocale();
+        // $serviceCategoryId = $request->get($singleSlug);
+        $productCategory= ProductCategory::findOrFail($singleSlug);
+        $products =$productCategory->products;
+        return view('Services.Sections.serviceCategoryProducts', compact('products','productCategory'));
+    }
 
 }
