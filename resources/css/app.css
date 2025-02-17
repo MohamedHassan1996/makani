@@ -96,6 +96,18 @@ html {
     }
   }
 
+  .ltr .about-us-section-btn{
+    flex-direction: row-reverse;
+
+    svg {
+        transform: rotate(180deg)!important;
+    }
+}
+
+  .ltr .arrow-slider-details {
+    transform: rotate(180deg)!important;
+  }
+
   .ltr .projects-arrow-icon-right {
     transform: rotate(180deg) !important;
   }
@@ -105,6 +117,10 @@ html {
 
   .ltr .product-details {
       margin-left: 60px !important;
+  }
+
+  .ltr .arrow-btn-why-us {
+    transform: rotate(-180deg) !important;
   }
 
   .flag-icon {

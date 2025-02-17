@@ -5,7 +5,7 @@
       <p class="[font-family:Ping_AR_+_LT] text-lg md:text-2xl font-normal  leading-[24px] md:leading-[29px] text-[#8e8e8e] self-stretch mt-2">{{  $whyUsSection->content[0]['content'] }}</p>
       <button onclick="window.location.href= '{{ app()->getLocale() == 'en' ? url('about-us') : url('ar/نبذة-عنا')  }}'" class="border bg-transparent [font-family:Ping_AR_+_LT] text-base font-medium leading-[19px] text-[#2c64e3] hover:bg-[#2c64e3] hover:text-white cursor-pointer min-w-[143px] h-[49px] w-[143px] inline-flex items-center justify-center gap-[3px] mt-[23.5px] rounded-lg border-solid border-[#2c64e3]">
         <span>{{  $whyUsSection->content[0]['btn'] }}</span>
-        <div class="w-6 h-6 flex">
+        <div class="w-6 h-6 flex arrow-btn-why-us">
           <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="&lt;Icon> Before_5" data-node-id="I9007:855;2027:16907" xmlns="http://www.w3.org/2000/svg">
               <g id="heroicons-outline/arrow-left_3" data-node-id="I9007:855;2027:16907;7005:6658">
