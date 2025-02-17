@@ -11,7 +11,7 @@
                 <div class="title items-stretch font-semibold text-[#FBFCF8] mt-1">{{ app()->getLocale() == 'en' ? 'Address:' : 'العنوان:' }}</div>
                 {{-- <p class="text-[#FBFCF8] font-[100]">المستوى 1، 12 شارع العينة، سيدني NSW 2000</p> --}}
                 @if(app()->getLocale() == 'en')
-                <p class="text-[#FBFCF8] font-[100]">{{ $mainSettings->content['addressesEn'][0] }}</p>
+                <p class="text-[#FBFCF8] font-[100]"><bdi>{{ $mainSettings->content['addressesEn'][0] }}</bdi></p>
                 @else
                 <p class="text-[#FBFCF8] font-[400]">{{ $mainSettings->content['addressesAr'][0] }}</p>
                 @endif
