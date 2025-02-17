@@ -22,11 +22,11 @@
                   <div class="flex flex-col md:flex-row justify-between items-center gap-2 first:mt-0 mt-4 md:mt-[24.00px]">
                     <div class="flex justify-start items-start flex-row">
                       <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap ml-1.5"> {{ app()->getLocale() == 'en' ? 'name:' : " الاسم:"  }}</p>
-                      <p class="[font-family:Ping_AR_+_LT] text-xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap"> {{  $product->name }}</p>
+                      <p class="[font-family:Ping_AR_+_LT] text-xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap"> {{   Str::limit( $product->name,10)}}</p>
                     </div>
                     <div class="flex justify-start items-start flex-row">
                       <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap ml-1.5">{{ app()->getLocale() == 'en' ? 'job:' : " الوظيفة:"  }}</p>
-                      <p class="[font-family:Ping_AR_+_LT] text-xl  font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">{{   $product->description }}</p>
+                      <p class="[font-family:Ping_AR_+_LT] text-xl  font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">{{   Str::limit($product->description, 15) }}</p>
                     </div>
                   </div>
                   <div class="flex flex-col md:flex-row justify-between items-center gap-2 mt-4 md:mt-[24.00px]">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="flex justify-start items-start flex-row">
                       <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap ml-1.5">{{ app()->getLocale() == 'en' ? 'age:' : " السن:"  }}</p>
-                      <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">{{ $product->slug }}</p>
+                      <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">{{ Str::limit($product->slug, 10) }}</p>
                     </div>
                   </div>
                 </div>
