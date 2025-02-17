@@ -45,7 +45,7 @@
                 onclick="window.location.href='{{ url(app()->getLocale() == 'en' ? '/products/'.$product->slug : '/'.app()->getLocale().'/products/'.$product->slug) }}'"
               >
                 <span> {{ app()->getLocale() == 'en' ? 'More details' : " تفاصيل اكثر"  }}</span>
-                <img src="storage/assets/arrow.svg" class="img-fluid w-6 h-6 flex rounded-top" alt="arrow" loading="lazy" />
+                <img src="storage/assets/arrow.svg" class="img-fluid arrow-slider-details  w-6 h-6 flex rounded-top" alt="arrow" loading="lazy" />
               </button>
             </div>
             <img src="{{ url('storage/'.$product->images()->first()->path) }}" class="h-[200px] sm:h-[250px] sm:m-auto md:h-[314px] object-cover w-full sm:w-[400px] md:w-[500px] block rounded-lg mt-4 md:mt-0" />
