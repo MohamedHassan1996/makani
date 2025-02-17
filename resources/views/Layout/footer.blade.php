@@ -5,56 +5,40 @@
           <div class="flex justify-between flex-wrap ">
 
             <div class="w-[450px] flex flex-col gap-[28px]">
-              <img src="{{ url('storage/assets/MAKANI.jpg') }}" width="70" height="50" alt="شعار" />
+              <img src="{{ url('public/storage/' . $mainSettings->logo) }}" width="70" height="50" alt="شعار" />
 
               <div class="address">
-                <div class="title items-stretch font-semibold text-[#FBFCF8] mt-1">العنوان:</div>
-                <p class="text-[#FBFCF8] font-[100]">المستوى 1، 12 شارع العينة، سيدني NSW 2000</p>
+                <div class="title items-stretch font-semibold text-[#FBFCF8] mt-1">{{ app()->getLocale() == 'en' ? 'Address:' : 'العنوان:' }}</div>
+                {{-- <p class="text-[#FBFCF8] font-[100]">المستوى 1، 12 شارع العينة، سيدني NSW 2000</p> --}}
+                @if(app()->getLocale() == 'en')
+                <p class="text-[#FBFCF8] font-[100]">{{ $mainSettings->content['addressesEn'][0] }}</p>
+                @else
+                <p class="text-[#FBFCF8] font-[400]">{{ $mainSettings->content['addressesAr'][0] }}</p>
+                @endif
               </div>
+
+
 
               <div class="contact">
-                <div class="title items-stretch font-semibold text-[#FBFCF8]">الاتصال:</div>
-                <p class="text-[#FBFCF8] font-[100] mt-1">+20 1007 8155 7</p>
-                <a href="mailto:Makanialain33@gmail.com" class="text-[#FBFCF8] font-[100]">Makanialain33@gmail.com</a>
-                </div>
+                <div class="title items-stretch font-semibold text-[#FBFCF8]">{{ app()->getLocale() == 'en' ? 'Contact:' : 'اتصل بنا:' }}</div>
+                {{-- <p class="text-[#FBFCF8] font-[100] mt-1">+20 1007 8155 7</p> --}}
+                {{-- <a href="mailto:Makanialain33@gmail.com" class="text-[#FBFCF8] font-[100]">Makanialain33@gmail.com</a> --}}
+                <a href="tel:{{ $mainSettings->content['contact'][0] }}" class="text-[#FBFCF8] font-[100] mt-1">
+                    <bdi>{{ $mainSettings->content['contact'][0] }}</bdi>
+                </a>
+            </div>
               <!-- social media -->
               <div class="social-media-icons flex gap-[12px]">
-                <a href="https://www.facebook.com" target="_blank"><img src="{{ url('storage/assets/Facebook .png') }}" width="25" height="25" alt="" /></a>
+                {{-- <a href="https://www.facebook.com" target="_blank"><img src="{{ url('storage/assets/Facebook .png') }}" width="25" height="25" alt="" /></a>
                 <a href="https://www.instagram.com/makani_uae2024" target="_blank"><img src="{{ url('storage/assets/Instagram.png') }}" width="25" height="25" alt="" /></a>
                 <a href="https://www.linkedin.com" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="" /></a>
-                <a href="https://twitter.com" target="_blank"><img src="{{ url('storage/assets/X.png') }}" width="25" height="25" alt="" /></a>
+                <a href="https://twitter.com" target="_blank"><img src="{{ url('storage/assets/X.png') }}" width="25" height="25" alt="" /></a> --}}
                 {{-- <a href="https://www.youtube.com" target="_blank"><img src="url('storage/assets/Youtube.svg') }}" width="25" height="25" alt=""/></a> --}}
+                <a href="{{ $mainSettings->content['socialMedia']['facebook'] }}" target="_blank"><img src="{{ url('storage/assets/Facebook.png') }}" width="25" height="25" alt="Facebook" /></a>
+                <a href="{{ $mainSettings->content['socialMedia']['instagram'] }}" target="_blank"><img src="{{ url('storage/assets/Instagram.png') }}" width="25" height="25" alt="Instagram" /></a>
+                <a href="{{ $mainSettings->content['socialMedia']['linkedin'] }}" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="LinkedIn" /></a>
               </div>
             </div>
-
-            <!-- links -->
-            {{-- <div class="flex flex-col gap-[16px] w-[100px]">
-              <a href="./index.html" class="[font-family:'Open_Sans',sans-serif] text-[18px] text-base font-normal leading-4 text-[#FBFCF8] cursor-pointer">الرئيسية</a>
-              <a
-                href="./product.html"
-                class="[font-family:'Open_Sans',sans-serif] text-[18px] text-base font-normal leading-4 text-[#FBFCF8] cursor-pointer"
-              >
-                المنتجات
-              </a>
-              <a
-                href="./about-us.html"
-                class="[font-family:'Open_Sans',sans-serif] text-[18px] text-base font-normal leading-4 text-[#FBFCF8] cursor-pointer"
-              >
-                من نحن
-              </a>
-              <a
-                href="./contactus.html"
-                class="[font-family:'Open_Sans',sans-serif] text-[18px] text-base font-normal leading-4 text-[#FBFCF8] cursor-pointer"
-              >
-                تواصل معنا
-              </a>
-              <a
-                href="./blog.html"
-                class="[font-family:'Open_Sans',sans-serif] text-[18px] text-base font-normal leading-4 text-[#FBFCF8] cursor-pointer"
-              >
-                المدونة
-              </a>
-            </div> --}}
             <div class="flex flex-col gap-[16px] w-[100px]">
                 @foreach ($navbarLinks as $navbarLink)
                 @if (in_array($navbarLink->controller_name, ['HomePageController', 'ServicePageController','AboutPageController','ContactPageController']))
