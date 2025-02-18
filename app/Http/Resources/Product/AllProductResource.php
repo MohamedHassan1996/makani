@@ -25,7 +25,7 @@ class AllProductResource extends JsonResource
             'productId' => $this->id,
             'name' => $this->name,
             'isActive' => $this->is_active,
-            'media' => $imageOrVideo
+            'image' => $imageOrVideo
     ? Storage::disk('public')->url($imageOrVideo->path)
     : "",
             'type' => $imageOrVideo ? $imageOrVideo->type : ""
