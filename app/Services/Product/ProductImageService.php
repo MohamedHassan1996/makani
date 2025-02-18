@@ -28,6 +28,7 @@ class ProductImageService {
         $productImage = new ProductImage();
         $productImage->path = $data['path'];
         $productImage->product_id = $data['productId'];
+        $productImage->type = $data['type'];
         $productImage->save();
 
         return $productImage;

@@ -40,6 +40,7 @@ class ProductImageController extends Controller
 
                 $this->productImageService->create([
                     'productId' => $request->productId,
+                    'type' => $image['type'],
                     'path' => $path
                 ]);
             }

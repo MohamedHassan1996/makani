@@ -19,6 +19,7 @@ class ProductImageResource extends JsonResource
 
         return [
             'imageId' => $this->id,
+            'type' => $this->type,
             'path' => Storage::disk('public')->url($this->path),
         ];
     }

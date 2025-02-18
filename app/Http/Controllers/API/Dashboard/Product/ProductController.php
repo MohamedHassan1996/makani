@@ -50,14 +50,15 @@ class ProductController extends Controller
             DB::beginTransaction();
             $data=$createProductRequest->validated();
             // $data=$request->all();
-        
+
             $product =  $this->productService->create($data);
             if (isset($data['images'])) {
                 foreach ($data['images'] as $key => $image) {
                     $path = $this->uploadService->uploadFile($image['path'], "products/$product->id");
                     $this->productImageService->create([
                         'productId' => $product->id,
-                        'path' => $path
+                        'path' => $path,
+                        'type' => $image['type']
                     ]);
                 }
             }
@@ -91,6 +92,7 @@ class ProductController extends Controller
                     $path = $this->uploadService->uploadFile($image['path'], "products/$product->id");
                     $productImage = new ProductImage();
                     $productImage->path = $path;
+                    $productImage->type = $image['type'];
                     $productImage->product_id = $updateProductRequest['productId'];
                     $productImage->save();
                 }
