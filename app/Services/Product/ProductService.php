@@ -34,6 +34,7 @@ class ProductService{
     {
         $product =new Product();
         $product->is_active =ProductStatus::from($data['isActive'])->value;
+        $product->product_category_id =$data['productCategoryId']??null;
         if(!empty($data['nameAr'])){
             $product->translateOrNew('ar')->name =$data['nameAr'];
             $product->translateOrNew('ar')->description =$data['descriptionAr'];
@@ -58,6 +59,7 @@ class ProductService{
     public function update(array $data)
     {
       $product =Product::find($data['productId']);
+      $product->product_category_id =$data['productCategoryId']??null;
       if( $product->is_active){
         $product->is_active =ProductStatus::from($data['isActive']);
        }
