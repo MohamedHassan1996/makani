@@ -22,7 +22,9 @@ class AllProductResource extends JsonResource
             'productId' => $this->id,
             'name' => $this->name,
             'isActive' => $this->is_active,
-            'image' => $this->images->first() != null? Storage::disk('public')->url($this->images->where('type', 0)->first()->path):"",
+           'image' => $this->images->where('type', 0)->first()
+    ? Storage::disk('public')->url($this->images->where('type', 0)->first()->path)
+    : "",
         ];
     }
 }
