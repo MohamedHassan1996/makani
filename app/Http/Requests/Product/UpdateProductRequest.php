@@ -34,6 +34,7 @@ class UpdateProductRequest extends FormRequest
             ->ignore($this->productId, 'product_id')->where('locale', 'ar')],
             'descriptionEn' => ['required'],
             'descriptionAr' => ['required'],
+            'productCategoryId'=>['nullable','exists:product_categories,id'],
             'slugEn' => ['required'],
             'slugAr' => ['required'],
             'contentEn' => ['required'],

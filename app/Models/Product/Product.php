@@ -13,8 +13,8 @@ use Astrotomic\Translatable\Contracts\Translatable  as TranslatableContract;
 class Product extends Model implements TranslatableContract
 {
     use HasFactory ,Translatable;
-    protected $translatedAttributes = ['name', 'description', 'slug', 'content', 'meta_data','product_category_id'];
-    protected $fillable =['is_active'];
+    protected $translatedAttributes = ['name', 'description', 'slug', 'content', 'meta_data'];
+    protected $fillable =['is_active','product_category_id'];
     protected $casts =[
        'is_active'=>ProductStatus::class
     ];

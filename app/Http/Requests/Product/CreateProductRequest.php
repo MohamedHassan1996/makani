@@ -32,6 +32,7 @@ class CreateProductRequest extends FormRequest
             'slugAr' => ['required','unique:product_translations,slug,NULL,id,locale,ar'],
             'descriptionEn' => ['required'],
             'descriptionAr' => ['required'],
+            'productCategoryId'=>['nullable','exists:product_categories,id'],
             'contentEn' => ['required'],
             'contentAr' => ['required'],
             'metaDataEn' => ['required'],
