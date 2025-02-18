@@ -11,7 +11,7 @@
             <a href="{{ app()->getLocale() == 'en' ? url('about-us') : url('ar/نبذة-عنا')  }}">
             <button class="about-us-section-btn flex-row-reverse bg-white font-[Ping_AR_+_LT] text-base font-medium leading-[19px] text-black cursor-pointer min-w-[189px] h-12 w-[189px] inline-flex items-center justify-center gap-[3px] mt-8 rounded-lg">
                 <div class="w-6 h-6 flex">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.5,19.5l-7.5,-7.5M3,12l7.5,-7.5M3,12h18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>

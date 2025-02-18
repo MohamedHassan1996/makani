@@ -67,7 +67,7 @@
               <a href="" class="text-white">إعدادات الكوكيز</a>
             </div> --}}
           </div>
-        </div> --}}
+        </div>
       </section>
       {{-- <script>
         document.querySelector('.Subscribe').addEventListener('submit', async (event) => {

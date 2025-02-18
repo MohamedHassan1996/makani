@@ -99,7 +99,7 @@ html {
   .ltr .about-us-section-btn{
     flex-direction: row-reverse;
 
-    svg {
+    .svg {
         transform: rotate(180deg)!important;
     }
 }
