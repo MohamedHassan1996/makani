@@ -50,6 +50,7 @@ class ProductController extends Controller
             DB::beginTransaction();
             $data=$createProductRequest->validated();
             // $data=$request->all();
+        
             $product =  $this->productService->create($data);
             if (isset($data['images'])) {
                 foreach ($data['images'] as $key => $image) {
