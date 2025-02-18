@@ -28,6 +28,7 @@ class AllProductResource extends JsonResource
             'media' => $imageOrVideo
     ? Storage::disk('public')->url($imageOrVideo->path)
     : "",
+            'type' => $imageOrVideo ? $imageOrVideo->type : ""
         ];
     }
 }
