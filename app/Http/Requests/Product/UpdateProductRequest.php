@@ -43,6 +43,7 @@ class UpdateProductRequest extends FormRequest
             'metaDataAr' => ['required'],
             'isActive' => ['required', new Enum(ProductStatus::class)],
             'images' => ['nullable'],
+            'type' ['required']
         ];
     }
     public function failedValidation(Validator $validator)

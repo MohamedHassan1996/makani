@@ -58,7 +58,7 @@ class ProductController extends Controller
                     $this->productImageService->create([
                         'productId' => $product->id,
                         'path' => $path,
-                        'type' => $image['type']
+                        'type' => $data['type']
                     ]);
                 }
             }
@@ -92,7 +92,7 @@ class ProductController extends Controller
                     $path = $this->uploadService->uploadFile($image['path'], "products/$product->id");
                     $productImage = new ProductImage();
                     $productImage->path = $path;
-                    $productImage->type = $image['type'];
+                    $productImage->type = $updateProductRequest['type'];
                     $productImage->product_id = $updateProductRequest['productId'];
                     $productImage->save();
                 }
