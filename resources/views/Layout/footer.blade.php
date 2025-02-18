@@ -1,7 +1,7 @@
    <!-- footer -->
        <!-- done -->
        <section class="footer bg-[#333333] py-[64px]">
-        {{-- <div class="w-11/12 md:w-4/5 m-auto">
+        <div class="w-11/12 md:w-4/5 m-auto">
           <div class="flex justify-between flex-wrap ">
 
             <div class="w-[450px] flex flex-col gap-[28px]">
