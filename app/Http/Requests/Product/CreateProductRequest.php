@@ -39,7 +39,7 @@ class CreateProductRequest extends FormRequest
             'metaDataAr' => ['required'],
             'isActive' => ['required', new Enum(ProductStatus::class)],
             'images' => ['required','max:2048'],
-            'type' ['required']
+            'type' => ['required']
         ];
     }
     public function failedValidation(Validator $validator)
