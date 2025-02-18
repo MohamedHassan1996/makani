@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
 
-use function PHPUnit\Framework\isEmpty;
 
 class AllProductResource extends JsonResource
 {
@@ -18,12 +17,16 @@ class AllProductResource extends JsonResource
 
     public function toArray(Request $request): array
     {
+        $imageOrVideo = $this->images->whereIn('type', [0, 1])->sortBy('type')->first();
+
+
+
         return [
             'productId' => $this->id,
             'name' => $this->name,
             'isActive' => $this->is_active,
-           'image' => $this->images->where('type', 0)->first()
-    ? Storage::disk('public')->url($this->images->where('type', 0)->first()->path)
+            'media' => $imageOrVideo
+    ? Storage::disk('public')->url($imageOrVideo->path)
     : "",
         ];
     }
