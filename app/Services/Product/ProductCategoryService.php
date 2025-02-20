@@ -6,6 +6,7 @@ use App\Enums\Product\ProductCategoryStatus;
 use App\Filters\Product\ProductCategorySearchTranslatableFilter;
 use App\Models\Product\ProductCategory;
 use App\Services\Upload\UploadService;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -81,7 +82,7 @@ class ProductCategoryService{
 
         $path = null;
 
-        if (isset($data['image'])) {
+        if (isset($data['image']) && $data['image'] instanceof UploadedFile ) {
             if(is_string($data['image'])){
                 $path = null;
             }
