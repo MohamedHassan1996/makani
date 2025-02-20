@@ -7,6 +7,7 @@ use App\Services\Upload\UploadService;
 use Spatie\QueryBuilder\AllowedFilter;
 use Illuminate\Support\Facades\Storage;
 use App\Filters\Blog\BlogSearchTranslatableFilter;
+use Illuminate\Http\UploadedFile;
 
 class BlogService{
     private $uploadService;
