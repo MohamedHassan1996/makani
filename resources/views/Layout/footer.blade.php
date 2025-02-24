@@ -23,13 +23,19 @@
                 <div class="title items-stretch font-semibold text-[#FBFCF8]">{{ app()->getLocale() == 'en' ? 'Contact:' : 'اتصل بنا:' }}</div>
                 {{-- <p class="text-[#FBFCF8] font-[100] mt-1">+20 1007 8155 7</p> --}}
                 {{-- <a href="mailto:Makanialain33@gmail.com" class="text-[#FBFCF8] font-[100]">Makanialain33@gmail.com</a> --}}
-                <a href="tel:{{ $mainSettings->content['contact'][0] }}" class="text-[#FBFCF8] font-[100] mt-1">
-                    <bdi>{{ $mainSettings->content['contact'][0] }}</bdi>
-                </a>
-                <span class="text-[#FBFCF8] font-[100] mt-1">-</span>
-                <a href="tel:{{ $mainSettings->content['contact'][1] }}" class="text-[#FBFCF8] font-[100] mt-1">
-                    <bdi>{{ $mainSettings->content['contact'][1] }}</bdi>
-                </a>
+                @php
+                    $contacts = $mainSettings->content['contact'];
+                    $lastKey = array_key_last($contacts);
+                @endphp
+
+                @foreach ($contacts as $key => $contact)
+                    <a href="tel:{{ $contact }}" class="text-[#FBFCF8] font-[100] mt-1">
+                        <bdi>{{ $contact }}</bdi>
+                    </a>
+                    @if ($key !== $lastKey)
+                        <span class="text-[#FBFCF8] font-[100] mt-1">-</span>
+                    @endif
+                @endforeach
             </div>
               <!-- social media -->
               <div class="social-media-icons flex gap-[12px]">
