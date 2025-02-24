@@ -24,6 +24,7 @@ use App\Http\Controllers\API\Dashboard\Product\ProductCategoryController;
 use App\Http\Controllers\API\Dashboard\ContactUs\ContactUsMessageController;
 use App\Http\Controllers\API\Dashboard\ContactUs\WebsiteContactUsController;
 use App\Http\Controllers\API\Dashboard\FrontPage\FrontPageSectionController;
+use App\Http\Controllers\Api\Private\FrontPage\SectionImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -177,4 +178,9 @@ Route::prefix('v1/{lang}/admin/selects')->where(['lang' => 'en|ar'])->group(func
 Route::prefix('v1/contact-us')->group(function(){
     Route::post('create', [WebsiteContactUsController::class, 'create']);
 });
+
+Route::prefix('v1/{lang}/admin/section-images')->where(['lang' => 'en|ar'])->group(function(){
+    Route::delete('delete', [SectionImageController::class, 'delete']);
+});
+
 
