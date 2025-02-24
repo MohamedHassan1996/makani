@@ -26,6 +26,9 @@
                 <a href="tel:{{ $mainSettings->content['contact'][0] }}" class="text-[#FBFCF8] font-[100] mt-1">
                     <bdi>{{ $mainSettings->content['contact'][0] }}</bdi>
                 </a>
+                <a href="tel:{{ $mainSettings->content['contact'][1] }}" class="text-[#FBFCF8] font-[100] mt-1">
+                    <bdi>{{ $mainSettings->content['contact'][1] }}</bdi>
+                </a>
             </div>
               <!-- social media -->
               <div class="social-media-icons flex gap-[12px]">
