@@ -47,7 +47,7 @@
                 <a href="{{ $mainSettings->content['socialMedia']['facebook'] }}" target="_blank"><img src="{{ url('storage/assets/Facebook .png') }}" width="25" height="25" alt="Facebook" /></a>
                 <a href="{{ $mainSettings->content['socialMedia']['instagram'] }}" target="_blank"><img src="{{ url('storage/assets/Instagram.png') }}" width="25" height="25" alt="Instagram" /></a>
                 {{-- <a href="{{ $mainSettings->content['socialMedia']['linkedin'] }}" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="LinkedIn" /></a> --}}
-                <a href="{{ $mainSettings->content['socialMedia']['tikTok'] }}" target="_blank"><img src="{{ url('storage/assets/tikTok.jpeg') }}" width="25" height="25" alt="TikTok" /></a>
+                <a href="{{ $mainSettings->content['socialMedia']['tikTok'] }}" target="_blank"><img src="{{ url('storage/assets/tiktok.svg') }}" width="25" height="25" alt="TikTok" /></a>
             </div>
             </div>
             <div class="flex flex-col gap-[16px] w-[100px]">
