@@ -37,7 +37,8 @@
                 <a href="{{ $mainSettings->content['socialMedia']['facebook'] }}" target="_blank"><img src="{{ url('storage/assets/Facebook .png') }}" width="25" height="25" alt="Facebook" /></a>
                 <a href="{{ $mainSettings->content['socialMedia']['instagram'] }}" target="_blank"><img src="{{ url('storage/assets/Instagram.png') }}" width="25" height="25" alt="Instagram" /></a>
                 <a href="{{ $mainSettings->content['socialMedia']['linkedin'] }}" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="LinkedIn" /></a>
-              </div>
+                <a href="{{ $mainSettings->content['socialMedia']['tikTok'] }}" target="_blank"><img src="{{ url('storage/assets/LinkedIn.png') }}" width="25" height="25" alt="TikTok" /></a>
+            </div>
             </div>
             <div class="flex flex-col gap-[16px] w-[100px]">
                 @foreach ($navbarLinks as $navbarLink)
