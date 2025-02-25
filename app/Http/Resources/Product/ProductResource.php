@@ -42,6 +42,7 @@ class ProductResource extends JsonResource
             'contentAr' => $translations['contentAr'] ?? "",
             'metaDataEn' => isEmpty($translations['metaDataEn'])? [] : $translations['metaDataEn'],
             'metaDataAr' => isEmpty($translations['metaDataAr'])? [] : $translations['metaDataAr'],
+            'productCategoryId' => $this->product_category_id
         ];
     }
 
