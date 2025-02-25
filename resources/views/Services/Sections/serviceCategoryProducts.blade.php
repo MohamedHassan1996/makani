@@ -23,7 +23,7 @@
               <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 w-full box-border mt-2">
                 <div class="flex justify-start items-center flex-row">
                   <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">الحاله:</p>
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">{{ Str::limit($product->content,10) }} </p>
+                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">{{$product->description }} </p>
                 </div>
                 <div class="flex justify-start items-center flex-row">
                   {{-- <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">السن:</p>
