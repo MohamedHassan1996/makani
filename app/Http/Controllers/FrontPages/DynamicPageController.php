@@ -105,8 +105,6 @@ class DynamicPageController extends Controller
             $lang = app()->getLocale();
         }
 
-        dd($lang, $slug, $singleSlug);
-
         // Fetch the controller name based on the slug
         $page = DB::table('front_page_translations')
             ->leftJoin('front_pages', 'front_page_translations.front_page_id', '=', 'front_pages.id')
