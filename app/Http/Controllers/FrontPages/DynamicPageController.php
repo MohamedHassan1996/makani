@@ -39,7 +39,7 @@ class DynamicPageController extends Controller
             ->where('front_pages.is_active', 1)
             ->where('front_page_translations.slug', $slug)
             ->first();
- 
+
         /*if (!$page && url()->current() != url('/') && !in_array($lang, [ 'ar'])) {
             abort(404, 'Controller not found');
         } elseif ($page && $page->controller_name) {
@@ -104,6 +104,8 @@ class DynamicPageController extends Controller
             $slug = $lang;
             $lang = app()->getLocale();
         }
+
+        dd($lang, $slug, $singleSlug);
 
         // Fetch the controller name based on the slug
         $page = DB::table('front_page_translations')
