@@ -7,7 +7,7 @@
         <p class="[font-family:Ping_AR_+_LT] text-3xl md:text-7xl font-bold leading-[40px] md:leading-[86px] text-[#333333]">{{ app()->getLocale() == 'en' ? "What we offer you."  : "ما نقدمة إليك" }} </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             @foreach ($productCategories as $product)
-            <a href="{{ url()->current()}}/{{ $product->slug }}" class="bg-[#fbfcf8] flex justify-start items-stretch flex-col max-w-[389px] grow shrink rounded-xl border-[3px] border-solid border-[#fbfcf8]">
+            <a href="{{ url()->current()}}/{{ $product->id }}" class="bg-[#fbfcf8] flex justify-start items-stretch flex-col max-w-[389px] grow shrink rounded-xl border-[3px] border-solid border-[#fbfcf8]">
                 <img src="{{ url('storage/'. $product->image) }}" class="h-44 max-w-[initial] object-cover  block border-[none]" />
                 <div class=" flex justify-start flex-col pt-6 pb-[25.5px] px-[23px]">
                   <h2 class="[font-family:Ping_AR_+_LT] text-[29px] font-bold leading-[35px] text-[#333333]">{{ $product->name }}</h2>
