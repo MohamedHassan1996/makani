@@ -6,7 +6,7 @@
     <div class="">
       <div class="product-details">
         <h3 class="font-[Ping_AR_+_LT] text-[22px] md:text-[44px] font-bold leading-[86px] text-[#333333] mb-2">{{ $product->name }}</h3>
-        <p class="font-[Ping_AR_+_LT] text-base md:text-[29px] font-normal  leading-[25px] md:leading-[35px] mb-5 text-[#8e8e8e]">{{ $product->description }}</p>
+        <p class="font-[Ping_AR_+_LT] text-[18px] md:text-[22px] font-normal  leading-[25px] md:leading-[35px] mb-5 text-[#8e8e8e]">{{ $product->description }}</p>
 
             <div class="flex justify-between items-center">
                 {!! $product->content !!}
