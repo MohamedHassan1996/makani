@@ -10,7 +10,7 @@
             <img class="h-[245px] max-w-[initial] object-cover box-border block  rounded-lg border-[none]" src="{{ url('storage/'. $product->images->first()->path) }}" />
             <h3 class="[font-family:Ping_AR_+_LT] text-[23px] md:text-[30px] font-bold leading-[34px] md:leading-[42px] text-[#333333]"> {{ Str::limit($product->name,20) }}</h3>
             <div class="">
-                <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333]">
+                <p class="[font-family:Ping_AR_+_LT] text-xl md:text-[20] text-gray-600  leading-[24px] md:leading-[29px] text-[#333333]">
                     {{ Str::limit($product->description,100) }}
                 </p>
             </div>
