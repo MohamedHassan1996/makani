@@ -26,7 +26,7 @@ class ServicePageController extends Controller
         $locale = app()->getLocale();
         // $serviceCategoryId = $request->get($singleSlug);
         $productCategory= ProductCategory::findOrFail($singleSlug);
-        $products =$productCategory->products;
+        $products =$productCategory->products()->where('is_active', ProductStatus::ACTIVE->value)->get();
         return view('Services.Sections.serviceCategoryProducts', compact('products','productCategory'));
     }
 
