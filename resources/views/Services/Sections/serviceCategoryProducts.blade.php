@@ -11,7 +11,7 @@
             <h3 class="[font-family:Ping_AR_+_LT] text-[28px] md:text-[35px] font-bold leading-[34px] md:leading-[42px] text-[#333333] whitespace-pre-wrap "> {{ Str::limit($product->name,10) }}</h3>
             <div class="">
                 <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">
-                    {{ Str::limit($product->content,100) }}
+                    {{ Str::limit($product->description,100) }}
                 </p>
             </div>
             <button onclick="window.location.href='{{ url(app()->getLocale() == 'en' ? '/products/'.$product->slug : '/'.app()->getLocale().'/products/'.$product->slug) }}'" class="bg-[#2c64e3] [font-family:Ping_AR_+_LT] text-base font-medium leading-[19px] text-[white] cursor-pointer h-12 inline-flex items-center justify-center gap-[3px] box-border rounded-lg border-[none]">
