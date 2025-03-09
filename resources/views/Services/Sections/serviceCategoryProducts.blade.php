@@ -10,26 +10,9 @@
             <img class="h-[245px] max-w-[initial] object-cover box-border block  rounded-lg border-[none]" src="{{ url('storage/'. $product->images->first()->path) }}" />
             <h3 class="[font-family:Ping_AR_+_LT] text-[28px] md:text-[35px] font-bold leading-[34px] md:leading-[42px] text-[#333333] whitespace-pre-wrap "> {{ Str::limit($product->name,10) }}</h3>
             <div class="">
-              <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 w-full box-border">
-                <div class="flex justify-start items-center flex-row">
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">الجنسية:</p>
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">{{ Str::limit($product->slug,10) }}</p>
-                </div>
-                <div class="flex justify-start items-center flex-row">
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">الوظيفة:</p>
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">{{ Str::limit($product->description,10) }} </p>
-                </div>
-              </div>
-              <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 w-full box-border mt-2">
-                <div class="flex justify-start items-center flex-row">
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">الحاله:</p>
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">{{$product->description }} </p>
-                </div>
-                <div class="flex justify-start items-center flex-row">
-                  {{-- <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap ml-1.5">السن:</p>
-                  <p class="[font-family:Ping_AR_+_LT] text-lg md:text-xl font-medium leading-5 md:leading-6 text-[#333333] whitespace-pre-wrap">44</p> --}}
-                </div>
-              </div>
+                <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333] whitespace-pre-wrap">
+                    {{ Str::limit($product->content,100) }}
+                </p>
             </div>
             <button onclick="window.location.href='{{ url(app()->getLocale() == 'en' ? '/products/'.$product->slug : '/'.app()->getLocale().'/products/'.$product->slug) }}'" class="bg-[#2c64e3] [font-family:Ping_AR_+_LT] text-base font-medium leading-[19px] text-[white] cursor-pointer h-12 inline-flex items-center justify-center gap-[3px] box-border rounded-lg border-[none]">
               <div class="w-6 h-6 flex">

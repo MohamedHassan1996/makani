@@ -17,7 +17,7 @@
         <div class="swiper-slide border bg-[white] flex flex-col-reverse md:flex-row justify-center gap-6 md:gap-[50px] p-4 md:p-8 rounded-2xl border-solid border-[#e8e8e8]">
             <div class="product-details">
               <div class="flex justify-start items-stretch flex-col">
-                <h3 class="[font-family:Ping_AR_+_LT] text-4xl md:text-6xl text-center font-bold leading-[50px] md:leading-[72px] text-[#333333]">{{  $product->name }}</h3>
+                <h3 class="[font-family:Ping_AR_+_LT] text-2xl sm:text-3xl md:text-4xl font-bold leading-[50px] md:leading-[72px] text-[#333333]">{{  $product->name }}</h3>
                 <div class="mt-4 md:mt-6">
                   <div class="flex flex-col md:flex-row justify-between items-center gap-2 first:mt-0 mt-4 md:mt-[24.00px]">
                     <div class="flex justify-start items-start flex-row">
