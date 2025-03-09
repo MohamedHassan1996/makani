@@ -5,27 +5,15 @@
     <img src="{{ url('storage/'.$product->images->first()->path) }}" class="h-auto max-w-full object-cover w-full md:w-[380px] mt-8 md:mt-0 md:ml-[31px] rounded-xl border-[none]" />
     <div class="">
       <div class="product-details">
-        <h3 class="font-[Ping_AR_+_LT] text-4xl md:text-7xl font-bold leading-[86px] text-[#333333] mb-2">{{ $product->name }}</h3>
-        <p class="font-[Ping_AR_+_LT] text-base md:text-[29px] font-normal  leading-[25px] md:leading-[35px] mb-5 text-[#8e8e8e]">{{ $product->content }}</p>
-        <div class="flex flex-col gap-4 mt-[2.75px] mr-6">
-          <div class="flex">
-            <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
-              <ul class="list-disc">
-                <li>{{ app()->getLocale() == 'en' ? 'age:' : " :السن"  }}</li>
-              </ul>
-            </div>
-            <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">{{ $product->slug }}</p>
-          </div>
+        <h3 class="font-[Ping_AR_+_LT] text-[22px] md:text-[44px] font-bold leading-[86px] text-[#333333] mb-2">{{ $product->name }}</h3>
+        <p class="font-[Ping_AR_+_LT] text-base md:text-[29px] font-normal  leading-[25px] md:leading-[35px] mb-5 text-[#8e8e8e]">{{ $product->description }}</p>
 
-          <div class="flex">
-            <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
-              <ul class="list-disc">
-                <li>{{ app()->getLocale() == 'en' ? 'job:' : " :الوظيفة"  }}</li>
-              </ul>
+            <div class="flex justify-between items-center">
+                {!! $product->content !!}
             </div>
-            <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">{{  $product->description }}</p>
-          </div>
-                @foreach ($product->meta_data as $data)
+
+
+                {{-- @foreach ($product->meta_data as $data)
                 <div class="flex">
                     <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
                       <ul class="list-disc">
@@ -34,36 +22,11 @@
                     </div>
                     <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">{{ $data }}</p>
                   </div>
-                @endforeach
+                @endforeach --}}
 
 
 
-          {{-- <div class="flex">
-            <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
-              <ul class="list-disc">
-                <li>السن :</li>
-              </ul>
-            </div>
-            <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">32</p>
-          </div>
 
-          <div class="flex">
-            <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
-              <ul class="list-disc">
-                <li>لغه التحدث :</li>
-              </ul>
-            </div>
-            <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">العربيه والعبريه</p>
-          </div>
-
-          <div class="flex">
-            <div class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#333333]">
-              <ul class="list-disc">
-                <li>سنين الخبره :</li>
-              </ul>
-            </div>
-            <p class="font-[Ping_AR_+_LT] text-lg md:text-2xl font-medium leading-[29px] text-[#8e8e8e]">15</p>
-          </div> --}}
           <button id="whatsappButton" class="bg-[#2c64e3] [font-family:Ping_AR_+_LT] text-base font-medium leading-[19px] text-[white] cursor-pointer px-10 h-12 inline-flex items-center justify-center gap-[3px]  mt-10 rounded-lg border-[none]">
             <div class="w-6 h-6 flex">
               <svg viewBox="0 0 24 24" x="0" y="0" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +38,7 @@
             توظيف
            </button>
         </div>
+
       </div>
       <!-- Button Component is detected here -->
       {{-- <a href="https://wa.me/201061673841" target="_blank">     </a> --}}
