@@ -8,7 +8,7 @@
             @foreach ($products as $product)
             <div class="border bg-[white] box-border flex justify-start items-stretch flex-col gap-6 px-[23px] py-4 rounded-2xl border-solid border-[#e8e8e8]">
             <img class="h-[245px] max-w-[initial] object-cover box-border block  rounded-lg border-[none]" src="{{ url('storage/'. $product->images->first()->path) }}" />
-            <h3 class="[font-family:Ping_AR_+_LT] text-[20px] md:text-[30px] font-bold leading-[34px] md:leading-[42px] text-[#333333]"> {{ Str::limit($product->name,20) }}</h3>
+            <h3 class="[font-family:Ping_AR_+_LT] text-[23px] md:text-[30px] font-bold leading-[34px] md:leading-[42px] text-[#333333]"> {{ Str::limit($product->name,20) }}</h3>
             <div class="">
                 <p class="[font-family:Ping_AR_+_LT] text-xl md:text-2xl font-medium leading-[24px] md:leading-[29px] text-[#333333]">
                     {{ Str::limit($product->description,100) }}
