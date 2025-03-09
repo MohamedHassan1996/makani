@@ -9,7 +9,7 @@
         <p class="font-[Ping_AR_+_LT] text-base md:text-[29px] font-normal  leading-[25px] md:leading-[35px] mb-5 text-[#8e8e8e]">{{ $product->description }}</p>
 
             <div class="flex justify-between items-center">
-                {{ $product->content }}
+                {!! $product->content !!}
             </div>
 
 
