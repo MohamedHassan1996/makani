@@ -25,7 +25,11 @@
           <p
             class="font-[Ping_AR_+_LT] text-sm font-normal  leading-[17px] text-[#2c64e3] grow-0 shrink basis-auto"
           >
-          {{ $mainSettings->content['contact'][0] }}
+         @if (app()->getLocale() == 'en')
+         {{ $mainSettings->content['addressesEn'][0] }}
+         @else
+         {{ $mainSettings->content['addressesAr'][0] }}
+         @endif
           </p>
           <div class="ml-[7px] pb-3.5">
             <div class="w-5 h-5 text-[#2c64e3] flex">
@@ -70,7 +74,7 @@
             <p
               class="font-[Ping_AR_+_LT] text-sm font-normal leading-[17px] text-[#2c64e3] mr-[7px]"
             >
-              (406) 555-0120
+              <a href="tel:{{ $mainSettings->content['contact'][0] }}"> {{ $mainSettings->content['contact'][0] }}</a>
             </p>
             <div class="w-5 h-5 text-[#2c64e3] flex">
               <svg
