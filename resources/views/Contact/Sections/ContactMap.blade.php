@@ -12,7 +12,7 @@
       class="border bg-white box-border flex justify-start items-stretch flex-row w-full h-[119px] rounded-b-lg border-solid border-[#e8e8e8]"
     >
       <div
-        class="bg-white box-border flex justify-start items-end flex-col max-w-[248px] grow shrink basis-0 pl-[15px] pr-[15.5px] pt-4 border-r-[#e8e8e8] border-r border-solid"
+        class="bg-white box-border flex flex-col max-w-[248px] pl-[15px] pr-[15.5px] pt-4 border-r-[#e8e8e8] border-r border-solid"
       >
         <p
           class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]"
