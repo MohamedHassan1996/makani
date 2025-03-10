@@ -102,10 +102,10 @@
             </div>
           </div>
           <div
-            class="flex justify-end items-start flex-row self-stretch mt-2"
+            class="flex flex-row self-stretch mt-2"
           >
             <p
-              class="font-[Ping_AR_+_LT] text-sm font-normal  leading-[17px] text-[#2c64e3] grow-0 shrink basis-auto mr-[7px]"
+              class="font-[Ping_AR_+_LT] text-sm font-normal  leading-[17px] text-[#2c64e3] mr-[7px]"
             >
               <a href="mailto:{{ $mainSettings->content['emails'][0] }}">{{ $mainSettings->content['emails'][0] }}</a>
             </p>
