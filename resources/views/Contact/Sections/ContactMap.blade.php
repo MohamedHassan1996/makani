@@ -60,7 +60,7 @@
         </div>
       </div>
       <div
-        class="bg-white box-border flex justify-start items-end flex-col max-w-[248px] px-[15px] py-4 border-l-[#e8e8e8] border-l border-solid"
+        class="bg-white box-border flex flex-col max-w-[248px] px-[15px] py-4 border-l-[#e8e8e8] border-l border-solid"
       >
         <p
           class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]">
@@ -68,7 +68,7 @@
 
     </p>
         <div
-          class="flex justify-start items-end flex-col self-stretch mt-2"
+          class="flex flex-col self-stretch mt-2"
         >
           <div class="flex justify-end items-center flex-row">
             <p
