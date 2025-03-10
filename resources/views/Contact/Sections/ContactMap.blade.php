@@ -25,7 +25,7 @@
           <p
             class="font-[Ping_AR_+_LT] text-sm font-normal  leading-[17px] text-[#2c64e3] grow-0 shrink basis-auto"
           >
-            2464 Royal Ln. Mesa, New Jersey 45463
+          {{ $mainSettings->content['contact'][0] }}
           </p>
           <div class="ml-[7px] pb-3.5">
             <div class="w-5 h-5 text-[#2c64e3] flex">
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div
-        class="bg-white box-border flex justify-start items-end flex-col max-w-[248px] grow shrink basis-0 -ml-px px-[15px] py-4 border-l-[#e8e8e8] border-l border-solid"
+        class="bg-white box-border flex justify-start items-end flex-col max-w-[248px] px-[15px] py-4 border-l-[#e8e8e8] border-l border-solid"
       >
         <p
           class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]">
