@@ -17,8 +17,8 @@
         <p
           class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]"
         >
-          تعرف علينا
-        </p>
+{{ app()->getLocale() == 'en' ? 'know more' : 'تعرف علينا' }}
+    </p>
         <div
           class="flex justify-start items-start flex-row self-stretch mt-2"
         >
@@ -59,10 +59,10 @@
         class="bg-white box-border flex justify-start items-end flex-col max-w-[248px] grow shrink basis-0 -ml-px px-[15px] py-4 border-l-[#e8e8e8] border-l border-solid"
       >
         <p
-          class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]"
-        >
-          تواصل معنا
-        </p>
+          class="font-[Ping_AR_+_LT] text-sm font-medium leading-[17px] text-[#333333]">
+          {{ app()->getLocale() == 'en' ? 'contact' : 'اتصل بنا' }}
+
+    </p>
         <div
           class="flex justify-start items-end flex-col self-stretch mt-2"
         >
