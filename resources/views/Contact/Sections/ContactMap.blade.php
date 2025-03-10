@@ -107,7 +107,7 @@
             <p
               class="font-[Ping_AR_+_LT] text-sm font-normal  leading-[17px] text-[#2c64e3] grow-0 shrink basis-auto mr-[7px]"
             >
-              curtis.weaver@example.com
+              <a href="mailto:{{ $mainSettings->content['emails'][0] }}">{{ $mainSettings->content['emails'][0] }}</a>
             </p>
             <div class="pb-3.5">
               <div class="w-5 h-5 text-[#2c64e3] flex">
