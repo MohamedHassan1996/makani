@@ -68,9 +68,15 @@
     'products' => $products
 ])
 
-@include('Home.Sections.whyUs', [
+{{-- @include('Home.Sections.whyUs', [
     'whyUsSection' => $whyUsSection,
     'whyUsSectionImages' => $whyUsSectionImages,
+]) --}}
+
+@include('AboutUs.Sections.status', [
+    'customercount' => $customercount,
+    'productcount' => $productcount,
+    'productCategoryCount' => $productCategoryCount,
 ])
 
 @include('Home.Sections.feedback', [

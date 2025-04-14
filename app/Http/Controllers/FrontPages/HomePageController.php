@@ -9,6 +9,7 @@ use App\Enums\Blog\BlogStatus;
 use App\Models\Product\Product;
 use App\Models\FrontPage\FrontPage;
 use App\Http\Controllers\Controller;
+use App\Models\Customer\Customer;
 use App\Models\Product\ProductCategory;
 use App\Services\FrontPage\FrontPageService;
 
@@ -38,6 +39,11 @@ class HomePageController extends Controller
         $productCategory = ProductCategory::all();
         $products = Product::all();
 
+        $customercount =Customer::count();
+        $productcount =Product::count();
+        $productCategoryCount =ProductCategory::count();
+
+
         session(['active_navbar_link' => $slug??'']);
 
         if($lang == 'ar'){
@@ -54,7 +60,7 @@ class HomePageController extends Controller
             ]]);
         }
 
-        return view('Home.index', compact('homePage', 'products','productCategory','feedbacks'));
+        return view('Home.index', compact('homePage', 'products','productCategory','feedbacks', 'customercount','productcount','productCategoryCount'));
     }
     public function show($lang = 'en', $slug, $singleSlug, Request $request)
     {
