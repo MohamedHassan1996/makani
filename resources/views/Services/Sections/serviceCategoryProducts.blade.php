@@ -3,8 +3,8 @@
 <!-- services -->
 <section>
     <main class="py-24 w-4/5 m-auto">
-        <h1 class="[font-family:Ping_AR_+_LT] text-4xl md:text-7xl mb-[70px] font-bold leading-[50px] md:leading-[86px] text-[#333333]">{{ $productCategory->name }} </h1>
-        <p>{{ $productCategory->description }}</p>
+        <h1 class="[font-family:Ping_AR_+_LT] text-4xl md:text-7xl mb-[30px] font-bold leading-[50px] md:leading-[86px] text-[#333333]">{{ $productCategory->name }} </h1>
+        <p class="mb-[70px] text-[20px] text-[#777777] leading-[1.7] md:w-[70%] w-full">{{ $productCategory->description }}</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach ($products as $product)
             <div class="border bg-[white] box-border flex justify-start items-stretch flex-col gap-6 px-[23px] py-4 rounded-2xl border-solid border-[#e8e8e8]">
