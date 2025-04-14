@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 30,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+    //   autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    //   },
       navigation: {
         nextEl: ".arrow-next",
         prevEl: ".arrow-prev",
