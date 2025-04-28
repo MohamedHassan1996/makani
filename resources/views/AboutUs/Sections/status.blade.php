@@ -1,5 +1,5 @@
   <!-- status -->
-  <div class="bg-[rgba(51,51,51,0.04)]">
+  <div class="bg-[rgba(51,51,51,0.04)] stats-countUp">
     <div class="flex flex-wrap justify-between items-center w-11/12 md:w-4/5 m-auto py-12">
       <div class="flex justify-center items-stretch flex-col w-full md:w-auto mb-6 md:mb-0">
         <p class="[font-family:Ping_AR_+_LT] text-[40px] md:text-[50px] font-bold leading-[50px] md:leading-[60px] text-[#2c64e3] self-center">+{{ $customercount }}</p>
